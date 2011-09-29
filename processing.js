@@ -5812,11 +5812,11 @@
       print: function() {
         var digits = printMatrixHelper(this.elements);
         var output = "" + p.nfs(this.elements[0], digits, 4) + " " +
-                     p.nfs(this.elements[1], digits, 4) + " " +
-                     p.nfs(this.elements[2], digits, 4) + "\n" +
-                     p.nfs(this.elements[3], digits, 4) + " " +
-                     p.nfs(this.elements[4], digits, 4) + " " +
-                     p.nfs(this.elements[5], digits, 4) + "\n\n";
+                     p.nfs(Math.round(this.elements[1] * 10000) / 10000, digits, 4) + " " +
+                     p.nfs(Math.round(this.elements[2] * 10000) / 10000, digits, 4) + "\n" +
+                     p.nfs(Math.round(this.elements[3] * 10000) / 10000, digits, 4) + " " +
+                     p.nfs(Math.round(this.elements[4] * 10000) / 10000, digits, 4) + " " +
+                     p.nfs(Math.round(this.elements[5] * 10000) / 10000, digits, 4) + "\n\n";
         p.println(output);
       }
     };
