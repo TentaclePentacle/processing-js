@@ -5538,7 +5538,6 @@
        * @param {float} ty  the y-axis coordinate to move to
        */
       translate: function(tx, ty) {
-        console.log("Translate");
         this.elements[2] = tx * this.elements[0] + ty * this.elements[1] + this.elements[2];
         this.elements[5] = tx * this.elements[3] + ty * this.elements[4] + this.elements[5];
       },
@@ -5550,7 +5549,6 @@
        * @param {float} ty  the y-axis coordinate to move to
        */
       invTranslate: function(tx, ty) {
-        console.log("inv translate");
         this.translate(-tx, -ty);
       },
        /**
@@ -5778,32 +5776,6 @@
        * @param {float} angle         the angle of rotation in radiants
        */
       rotate: function(angle) {
-console.log("rotate");
-   	  
-    	//console.log("before " + this.elements[0]);
-
-//		var c = Math.cos(angle);
-//		var s = Math.sin(angle);
-//		var temp1 = this.elements[0];
-//		var temp2 = this.elements[1];
-//		this.elements[0] =  c * temp1 + s * temp2;
-//		this.elements[1] = -s * temp1 + c * temp2;
-//		temp1 = this.elements[3];
-//		temp2 = this.elements[4];
-//		this.elements[3] =  c * temp1 + s * temp2;
-//		this.elements[4] = -s * temp1 + c * temp2;
-
-//        var c = Math.cos(angle);
-//        var s = Math.sin(angle);
-//        var temp1 = this.elements[0];
-//        var temp2 = this.elements[1];
-//        this.elements[0] =  c * temp1 - s * temp2;
-//        this.elements[1] =  s * temp1 + c * temp2;
-//        temp1 = this.elements[3];
-//        temp2 = this.elements[4];
-//        this.elements[3] =  c * temp1 - s * temp2;
-//        this.elements[4] =  s * temp1 + c * temp2;
-
 		var c = Math.cos(angle);
 		var s = Math.sin(angle);
 		var temp1 = this.elements[0];
@@ -5814,12 +5786,6 @@ console.log("rotate");
 		temp2 = this.elements[4];
 		this.elements[1] =  c * temp1 - s * temp2;
 		this.elements[4] =  s * temp1 + c * temp2;
-        
-        //console.log("after " + this.elements[0]);
-                
-        //console.log(this.elements[0] + ", " + this.elements[1] + ", " +
-        //		this.elements[2] + ", " + this.elements[3] + ", " +
-        //		this.elements[4] + ", " + this.elements[5]);
       },
       /**
        * @member PMatrix2D
@@ -5828,7 +5794,6 @@ console.log("rotate");
        * @param {float} angle         the angle of rotation in radiants
        */
       rotateZ: function(angle) {
-    	console.log("rotate Z");
         this.rotate(angle);
       },
       /**
@@ -5838,7 +5803,6 @@ console.log("rotate");
        * @param {float} angle         the angle of rotation in radiants
        */
       invRotateZ: function(angle) {
-    	console.log("inv rotate Z");
         this.rotateZ(angle - Math.PI);
       },
       /**
@@ -5847,20 +5811,12 @@ console.log("rotate");
        */
       print: function() {
         var digits = printMatrixHelper(this.elements);
-//        var output = "" + p.nfs(this.elements[0], digits, 4) + " " +
-//                     p.nfs(Math.round(this.elements[1] * 10000) / 10000, digits, 4) + " " +
-//                     p.nfs(Math.round(this.elements[2] * 10000) / 10000, digits, 4) + "\n" +
-//                     p.nfs(Math.round(this.elements[3] * 10000) / 10000, digits, 4) + " " +
-//                     p.nfs(Math.round(this.elements[4] * 10000) / 10000, digits, 4) + " " +
-//                     p.nfs(Math.round(this.elements[5] * 10000) / 10000, digits, 4) + "\n\n";
-//        
-        var output = "" + p.nfs(this.elements[0], digits, 4) + " " +
-        p.nfs(this.elements[1], digits, 4) + " " +
-        p.nfs(this.elements[2], digits, 4) + "\n" +
-        p.nfs(this.elements[3], digits, 4) + " " +
-        p.nfs(this.elements[4], digits, 4) + " " +
-        p.nfs(this.elements[5], digits, 4) + "\n\n";
-        
+        var output = "" + p.nfs(Math.round(this.elements[0] * 10000) / 10000, digits, 4) + " " +
+                     p.nfs(Math.round(this.elements[1] * 10000) / 10000, digits, 4) + " " +
+                     p.nfs(Math.round(this.elements[2] * 10000) / 10000, digits, 4) + "\n" +
+                     p.nfs(Math.round(this.elements[3] * 10000) / 10000, digits, 4) + " " +
+                     p.nfs(Math.round(this.elements[4] * 10000) / 10000, digits, 4) + " " +
+                     p.nfs(Math.round(this.elements[5] * 10000) / 10000, digits, 4) + "\n\n";       
         p.println(output);
       }
     };
@@ -7650,7 +7606,6 @@ console.log("rotate");
     * @see rotateZ
     */
     Drawing2D.prototype.translate = function(x, y) {
-      console.log("prototype translate");
       modelView.translate(x, y);
       modelViewInv.invTranslate(x, y);
       curContext.translate(x, y);
@@ -7904,7 +7859,6 @@ console.log("rotate");
     * @see pushMatrix
     */
     Drawing2D.prototype.rotate = function(angleInRadians) {
-      console.log("prototype rotate");
       modelView.rotateZ(angleInRadians);
       modelViewInv.invRotateZ(angleInRadians);
       curContext.rotate(angleInRadians);
@@ -9153,8 +9107,6 @@ console.log("rotate");
       } else if (arguments.length !== 0) {
         Processing.logger.log(message);
       }
-
-    	console.log("println log: " + message);
     };
     /**
      * The print() function writes to the console area of the Processing environment.
