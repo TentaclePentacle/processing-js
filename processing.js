@@ -5779,15 +5779,6 @@
 		var c = Math.cos(angle);
 		var s = Math.sin(angle);
 		var temp1 = this.elements[0];
-		var temp2 = this.elements[3];
-//		this.elements[0] =  c * temp1 - s * temp2;
-//		this.elements[3] =  s * temp1 + c * temp2;
-//		temp1 = this.elements[1];
-//		temp2 = this.elements[4];
-//		this.elements[1] =  c * temp1 - s * temp2;
-//		this.elements[4] =  s * temp1 + c * temp2;
-		
-		var temp1 = this.elements[0];
 		var temp2 = this.elements[1];
 		this.elements[0] =  c * temp1 + s * temp2;
 		this.elements[1] =  -s * temp1 + c * temp2;
@@ -5820,29 +5811,12 @@
        */
       print: function() {
         var digits = printMatrixHelper(this.elements);
-//        var output = "" + p.nfs(Math.round(this.elements[0] * 10000) / 10000, digits, 4) + " " +
-//                     p.nfs(Math.round(this.elements[1] * 10000) / 10000, digits, 4) + " " +
-//                     p.nfs(Math.round(this.elements[2] * 10000) / 10000, digits, 4) + "\n" +
-//                     p.nfs(Math.round(this.elements[3] * 10000) / 10000, digits, 4) + " " +
-//                     p.nfs(Math.round(this.elements[4] * 10000) / 10000, digits, 4) + " " +
-//                     p.nfs(Math.round(this.elements[5] * 10000) / 10000, digits, 4) + "\n\n";
-        
-//        var output = "" + p.nfs(this.elements[0], digits, 4) + " " +
-//        p.nfs(this.elements[1], digits, 4) + " " +
-//        p.nfs(this.elements[2], digits, 4) + "\n" +
-//        p.nfs(this.elements[3], digits, 4) + " " +
-//        p.nfs(this.elements[4], digits, 4) + " " +
-//        p.nfs(this.elements[5], digits, 4) + "\n\n";
-//        
-//        p.println(output);
-
-        var output = "" + this.elements[0] + " " +
-        this.elements[1] + " " +
-        this.elements[2] + "\n" +
-        this.elements[3] + " " +
-        this.elements[4] + " " +
-        this.elements[5] + "\n\n";
-        
+        var output = "" + p.nfs(Math.round(this.elements[0] * 10000) / 10000, digits, 4) + " " +
+                     p.nfs(Math.round(this.elements[1] * 10000) / 10000, digits, 4) + " " +
+                     p.nfs(Math.round(this.elements[2] * 10000) / 10000, digits, 4) + "\n" +
+                     p.nfs(Math.round(this.elements[3] * 10000) / 10000, digits, 4) + " " +
+                     p.nfs(Math.round(this.elements[4] * 10000) / 10000, digits, 4) + " " +
+                     p.nfs(Math.round(this.elements[5] * 10000) / 10000, digits, 4) + "\n\n";
         p.println(output);
       }
     };
