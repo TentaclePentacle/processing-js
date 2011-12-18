@@ -5821,12 +5821,12 @@
        */
       print: function() {
         var digits = printMatrixHelper(this.elements);
-        var output = "" + p.nfs(this.elements[0], digits, 4) + " " +
-                     p.nfs(this.elements[1], digits, 4) + " " +
-                     p.nfs(this.elements[2], digits, 4) + "\n" +
-                     p.nfs(this.elements[3], digits, 4) + " " +
-                     p.nfs(this.elements[4], digits, 4) + " " +
-                     p.nfs(this.elements[5], digits, 4) + "\n\n";
+        var output = "" + p.nfs(Math.round(this.elements[0] * 10000) / 10000, digits, 4) + " " +
+                     p.nfs(Math.round(this.elements[1] * 10000) / 10000, digits, 4) + " " +
+                     p.nfs(Math.round(this.elements[2] * 10000) / 10000, digits, 4) + "\n" +
+                     p.nfs(Math.round(this.elements[3] * 10000) / 10000, digits, 4) + " " +
+                     p.nfs(Math.round(this.elements[4] * 10000) / 10000, digits, 4) + " " +
+                     p.nfs(Math.round(this.elements[5] * 10000) / 10000, digits, 4) + "\n\n";
         p.println(output);
       }
     };
@@ -6365,14 +6365,22 @@
       print: function() {
         var digits = printMatrixHelper(this.elements);
 
-        var output = "" + p.nfs(this.elements[0], digits, 4) + " " + p.nfs(this.elements[1], digits, 4) +
-                     " " + p.nfs(this.elements[2], digits, 4) + " " + p.nfs(this.elements[3], digits, 4) +
-                     "\n" + p.nfs(this.elements[4], digits, 4) + " " + p.nfs(this.elements[5], digits, 4) +
-                     " " + p.nfs(this.elements[6], digits, 4) + " " + p.nfs(this.elements[7], digits, 4) +
-                     "\n" + p.nfs(this.elements[8], digits, 4) + " " + p.nfs(this.elements[9], digits, 4) +
-                     " " + p.nfs(this.elements[10], digits, 4) + " " + p.nfs(this.elements[11], digits, 4) +
-                     "\n" + p.nfs(this.elements[12], digits, 4) + " " + p.nfs(this.elements[13], digits, 4) +
-                     " " + p.nfs(this.elements[14], digits, 4) + " " + p.nfs(this.elements[15], digits, 4) + "\n\n";
+        var output = "" + p.nfs(Math.round(this.elements[0] * 10000) / 10000, digits, 4) + 
+                     " " + p.nfs(Math.round(this.elements[1] * 10000) / 10000, digits, 4) +
+                     " " + p.nfs(Math.round(this.elements[2] * 10000) / 10000, digits, 4) + 
+                     " " + p.nfs(Math.round(this.elements[3] * 10000) / 10000, digits, 4) +
+                     "\n" + p.nfs(Math.round(this.elements[4] * 10000) / 10000, digits, 4) + 
+                     " " + p.nfs(Math.round(this.elements[5] * 10000) / 10000, digits, 4) +
+                     " " + p.nfs(Math.round(this.elements[6] * 10000) / 10000, digits, 4) + 
+                     " " + p.nfs(Math.round(this.elements[7] * 10000) / 10000, digits, 4) +
+                     "\n" + p.nfs(Math.round(this.elements[8] * 10000) / 10000, digits, 4) + 
+                     " " + p.nfs(Math.round(this.elements[9] * 10000) / 10000, digits, 4) +
+                     " " + p.nfs(Math.round(this.elements[10] * 10000) / 10000, digits, 4) + 
+                     " " + p.nfs(Math.round(this.elements[11] * 10000) / 10000, digits, 4) +
+                     "\n" + p.nfs(Math.round(this.elements[12] * 10000) / 10000, digits, 4) + 
+                     " " + p.nfs(Math.round(this.elements[13] * 10000) / 10000, digits, 4) +
+                     " " + p.nfs(Math.round(this.elements[14] * 10000) / 10000, digits, 4) + 
+                     " " + p.nfs(Math.round(this.elements[15] * 10000) / 10000, digits, 4) + "\n\n";
         p.println(output);
       },
       invTranslate: function(tx, ty, tz) {
