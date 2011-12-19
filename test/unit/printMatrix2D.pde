@@ -10,6 +10,12 @@ size(100, 100);
 printMatrix();
 _checkEqual(" 1.0000  0.0000  0.0000\n 0.0000  1.0000  0.0000\n\n", msg);
 
+// ROTATE
+rotate(PI);
+printMatrix();
+_checkEqual("-1.0000  0.0000  0.0000\n 0.0000 -1.0000  0.0000\n\n", msg);
+resetMatrix();
+
 // TRANSLATE
 pushMatrix();
 translate(50, 50);
